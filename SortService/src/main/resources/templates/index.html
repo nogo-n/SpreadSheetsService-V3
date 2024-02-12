@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>スタート画面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/submit}" method="post">
+
+    <input type="text" name="smallTextBox1" placeholder="URLをこちらへ" style="width: 300px;">
+
+    <input type="number" name="smallTextBox2" placeholder="開始セル">
+
+    <input type="number" name="smallTextBox3" placeholder="終了セル">
+
+    <button type="submit">ソート</button>
+</form>
+
+<!-- demoControllerImpl から渡されたデータを表形式で表示 -->
+<table>
+    <!-- データ行 -->
+    <tr th:each="row : ${googleSheetsData}" th:if="${row_index != 0}">
+        <td th:each="cell : ${row}" th:text="${cell}"></td>
+    </tr>
+</table>
+</body>
+</html>

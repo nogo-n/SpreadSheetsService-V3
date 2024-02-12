@@ -1,0 +1,9 @@
+spring:
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+
+server:
+  port: 8080

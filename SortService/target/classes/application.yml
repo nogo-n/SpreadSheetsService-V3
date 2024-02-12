@@ -1,0 +1,9 @@
+spring:
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+workshop.api.call:
+  host: localhost
+  port: 8080
